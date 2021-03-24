@@ -237,6 +237,7 @@ const AppContainer = () => {
               name="Notification"
               component={Notification}
               options={{
+                headerBackTitle: getLanguageString(language, 'GO_BACK'),
                 headerStyle: {
                   backgroundColor: theme.backgroundColor,
                 },
