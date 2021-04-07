@@ -6,12 +6,29 @@ import {
   Text,
   TextStyle,
   TouchableOpacity,
+  View,
   ViewStyle,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {ThemeContext} from '../../ThemeContext';
 import {styles} from './style';
+
+const gradientColor = {
+  dark: [
+    'rgba(126, 219, 220, 0.3)',
+    'rgba(228, 175, 203, 0.3)',
+    'rgba(226, 194, 139, 0.3)',
+    'rgba(255, 255, 255, 0.3)',
+    'rgba(255, 255, 255, 1)',
+  ],
+  light: [
+    'rgba(126, 219, 220, 0.3)',
+    'rgba(228, 175, 203, 0.3)',
+    'rgba(226, 194, 139, 0.2)',
+    'rgba(5, 5, 15, 0.3)',
+  ]
+}
 
 const Button = ({
   title,
@@ -31,7 +48,7 @@ const Button = ({
   style?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
 }) => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
 
   const parseSize = () => {
     let sizeStyle = styles.mediumButton;
@@ -89,7 +106,7 @@ const Button = ({
       return icon;
     }
     if (iconName) {
-      let _iconColor = '#000000';
+      let _iconColor = theme.name === 'dark' ? '#000000' : '#FFFFFF';
       switch (type) {
         case 'secondary':
           _iconColor = '#AD182A';
@@ -128,45 +145,55 @@ const Button = ({
 
   if (type === 'primary') {
     return (
-      <LinearGradient
-        start={{x: 0, y: 0}}
-        locations={[0, 0.2, 0.4, 0.6, 0.8]}
-        end={{x: 1, y: 1}}
-        // style={{flex: 1}}
+      <TouchableOpacity
+        onPress={() => {
+          !loading && onPress();
+        }}
+        disabled={disabled}
         style={[
-          styles.button,
-          parseSize(),
-          typeStyle,
+          // styles.button,
+          // parseSize(),
+          // typeStyle,
           block ? {width: '100%'} : null,
           style,
+          {
+            borderRadius: style && (style as any).borderRadius ? (style as any).borderRadius : styles.button.borderRadius,
+            backgroundColor: theme.name === 'light' ? '#000000' : '#FFFFFF'
+          }
         ]}
-        colors={[
-          'rgba(126, 219, 220, 0.3)',
-          'rgba(228, 175, 203, 0.3)',
-          'rgba(226, 194, 139, 0.3)',
-          'rgba(255, 255, 255, 0.3)',
-          'rgba(255, 255, 255, 1)',
-        ]}>
-        <TouchableOpacity
-          onPress={() => {
-            !loading && onPress();
-          }}
-          disabled={disabled}
-          style={{
-            alignItems: 'center',
-            justifyContent: 'center',
-            flex: 1,
-            flexDirection: 'row',
-          }}>
-          {loading && <ActivityIndicator color={textTypeStyle.color} />}
-          {!loading && renderIcon()}
-          {!loading && title && (
-            <Text allowFontScaling={false} style={[styles.title, textTypeStyle, textStyle]}>
-              {title}
-            </Text>
-          )}
-        </TouchableOpacity>
-      </LinearGradient>
+      >
+        <LinearGradient
+          start={{x: 0, y: 0}}
+          // locations={[0, 0.2, 0.4, 0.6, 0.8]}
+          end={{x: 1, y: 1}}
+          // style={{flex: 1}}
+          style={[
+            styles.button,
+            parseSize(),
+            // typeStyle,
+            // style,
+            {
+              borderRadius: style && (style as any).borderRadius ? (style as any).borderRadius : styles.button.borderRadius,
+            }
+          ]}
+          colors={theme.name === 'light' ? gradientColor.light : gradientColor.dark}>
+          <View
+            style={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              flex: 1,
+              flexDirection: 'row',
+            }}>
+            {loading && <ActivityIndicator color={textTypeStyle.color} />}
+            {!loading && renderIcon()}
+            {!loading && title && (
+              <Text allowFontScaling={false} style={[styles.title, textTypeStyle, textStyle]}>
+                {title}
+              </Text>
+            )}
+          </View>
+        </LinearGradient>
+      </TouchableOpacity>
     );
   }
 

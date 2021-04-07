@@ -12,7 +12,7 @@ const INFO_DATA = [
 ];
 
 const Info = () => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   return (
     <View style={[styles.container, {backgroundColor: theme.backgroundColor}]}>
       <List

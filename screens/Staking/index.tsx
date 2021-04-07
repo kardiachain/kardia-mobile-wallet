@@ -27,7 +27,7 @@ import { showTabBarAtom } from '../../atoms/showTabBar';
 const {width: viewportWidth} = Dimensions.get('window');
 
 const StakingScreen = () => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const language = useRecoilValue(languageAtom);
   const selectedWallet = useRecoilValue(selectedWalletAtom);
   const wallets = useRecoilValue(walletsAtom);

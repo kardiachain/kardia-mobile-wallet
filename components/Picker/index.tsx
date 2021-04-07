@@ -12,7 +12,7 @@ const Picker = ({
   placeholder,
   onChange,
 }: PickerProps & {items: Item[]; placeholder?: {} | Item}) => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   return (
     <>
       {headline && (

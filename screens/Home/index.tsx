@@ -42,7 +42,7 @@ const HomeScreen = () => {
 
   const setTabBarVisible = useSetRecoilState(showTabBarAtom);
 
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const language = useRecoilValue(languageAtom);
   const navigation = useNavigation();
 

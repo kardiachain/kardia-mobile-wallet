@@ -25,7 +25,7 @@ export default ({visible, onClose, validatorItem, onSuccess}: {
   const navigation = useNavigation();
   const stakedAmountInKAI = weiToKAI(validatorItem.stakedAmount);
 
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const language = useRecoilValue(languageAtom);
   const [undelegateAmount, setUndelegateAmount] = useState('');
   const [undelegateError, setUndelegateError] = useState('');

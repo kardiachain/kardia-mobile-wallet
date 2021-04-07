@@ -33,7 +33,7 @@ export default ({
   visible: boolean;
   onClose: () => void;
 }) => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const language = useRecoilValue(languageAtom);
   const dateLocale = getDateFNSLocale(language);
 
@@ -213,7 +213,7 @@ export default ({
           </Text>
           <Text allowFontScaling={false} style={{color: theme.textColor, fontSize: 18}}>KAI</Text>
         </View>
-        <Text allowFontScaling={false} style={styles.txhash}>{truncate(txObj.hash, 14, 14)}</Text>
+        <Text allowFontScaling={false} style={[styles.txhash, {color: theme.textColor}]}>{truncate(txObj.hash, 14, 14)}</Text>
         <View>
           <View
             style={{
@@ -235,9 +235,9 @@ export default ({
             </Text>
           </View>
         </View>
-        <Divider />
+        <Divider style={{width: '100%'}} color={theme.backgroundColor} />
         <View style={{justifyContent: 'flex-start', width: '100%'}}>
-          <Text allowFontScaling={false} style={{color: theme.mutedTextColor, fontSize: 12}}>
+          <Text allowFontScaling={false} style={{color: theme.textColor, fontSize: 12}}>
             {getLanguageString(language, 'FROM')}
           </Text>
           {txObj.from !== getOtherAddress()
@@ -246,23 +246,23 @@ export default ({
         </View>
         <View
           style={{justifyContent: 'flex-start', width: '100%', marginTop: 12}}>
-          <Text allowFontScaling={false} style={{color: theme.mutedTextColor, fontSize: 12}}>
+          <Text allowFontScaling={false} style={{color: theme.textColor, fontSize: 12}}>
             {getLanguageString(language, 'TO')}
           </Text>
           {txObj.to !== getOtherAddress()
             ? renderOwnAddress(txObj.to)
             : renderOtherAddress(txObj.to)}
         </View>
-        <Divider />
+        <Divider style={{width: '100%'}} color={theme.backgroundColor} />
         <View style={{justifyContent: 'flex-start', width: '100%'}}>
-          <Text allowFontScaling={false} style={{color: theme.mutedTextColor, fontSize: 12}}>
+          <Text allowFontScaling={false} style={{color: theme.textColor, fontSize: 12}}>
             {getLanguageString(language, 'TRANSACTION_FEE')}
           </Text>
           <Text allowFontScaling={false} style={{color: theme.textColor, fontSize: 15}}>
             {parseKaiBalance(txObj.txFee, true)} KAI
           </Text>
         </View>
-        <Divider />
+        <Divider style={{width: '100%'}} color={theme.backgroundColor} />
         <Button
           title={getLanguageString(language, 'OK_TEXT')}
           type="primary"

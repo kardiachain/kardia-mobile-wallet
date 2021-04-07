@@ -14,7 +14,7 @@ const ListCard = ({
   gasPrice: number;
   selectGasPrice: (gasPrice: number) => void;
 }) => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const language = useRecoilValue(languageAtom);
 
   const data = [

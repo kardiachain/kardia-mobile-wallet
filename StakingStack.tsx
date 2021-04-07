@@ -14,7 +14,7 @@ import {ThemeContext} from './ThemeContext';
 const StakingStack = createStackNavigator();
 
 const StakingStackScreen = () => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const language = useRecoilValue(languageAtom);
   return (
     <StakingStack.Navigator

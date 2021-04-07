@@ -5,6 +5,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {View, Text, TouchableOpacity, Image, ScrollView} from 'react-native';
 // import Icon from 'react-native-vector-icons/FontAwesome';
 import ENIcon from 'react-native-vector-icons/Entypo';
+import ToggleSwitch from 'toggle-switch-react-native';
 import IconButton from '../../components/IconButton';
 import {useRecoilValue, useSetRecoilState} from 'recoil';
 import {ThemeContext} from '../../ThemeContext';
@@ -15,11 +16,11 @@ import {showTabBarAtom} from '../../atoms/showTabBar';
 import {walletsAtom} from '../../atoms/wallets';
 
 const INFO_DATA = {
-  version: '2.0.3',
+  version: '2.1.0',
 };
 
 const SettingScreen = () => {
-  const theme = useContext(ThemeContext);
+  const {theme, setTheme} = useContext(ThemeContext);
   const navigation = useNavigation();
 
   const language = useRecoilValue(languageAtom);
@@ -70,6 +71,43 @@ const SettingScreen = () => {
             }}>
             <TouchableOpacity
               style={styles.settingItemContainer}
+              onPress={() => navigation.navigate('LanguageSetting')}>
+              <View
+                style={{
+                  width: 32,
+                  height: 32,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backgroundColor: 'rgba(105, 94, 181, 1)',
+                  borderRadius: 12,
+                }}>
+                <Image
+                  source={require('../../assets/icon/darkmode_dark.png')}
+                  style={{width: 20, height: 20, resizeMode: 'contain'}}
+                />
+              </View>
+              <View style={{alignItems: 'flex-start', flex: 1}}>
+                <Text allowFontScaling={false} style={[styles.settingTitle, {color: theme.textColor}]}>
+                  {getLanguageString(language, 'DARK_MODE_MENU')}
+                </Text>
+              </View>
+              <ToggleSwitch
+                isOn={theme.name === 'dark'}
+                onColor="#6688FF"
+                offColor="#B0B0B0"
+                labelStyle={{ color: "black", fontWeight: "900" }}
+                size="small"
+                onToggle={(isOn: boolean) => {
+                  if (isOn) {
+                    setTheme('dark')
+                  } else {
+                    setTheme('light')
+                  }
+                }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.settingItemContainer, {marginTop: 28}]}
               onPress={() => navigation.navigate('LanguageSetting')}>
               <View
                 style={{

@@ -18,7 +18,7 @@ import AuthModal from '../common/AuthModal';
 
 const MnemonicPhraseSetting = () => {
   const navigation = useNavigation();
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const [mnemonic, setMnemonic] = useState('');
   const language = useRecoilValue(languageAtom);
   const wallets = useRecoilValue(walletsAtom);

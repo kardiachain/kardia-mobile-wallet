@@ -12,7 +12,7 @@ import AddressDetail from './screens/AddressDetail';
 const AddressStack = createStackNavigator();
 
 const AddressStackScreen = () => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   return (
     <AddressStack.Navigator
       initialRouteName="AddressBook"

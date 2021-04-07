@@ -33,7 +33,7 @@ const CustomTextInput = ({
   inputStyle?: StyleProp<TextStyle>;
   inputRef?: React.RefObject<TextInput>;
 }) => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
 
   const renderMessage = () => {
     if (!message) {

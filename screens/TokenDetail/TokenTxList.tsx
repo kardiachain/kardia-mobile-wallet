@@ -44,7 +44,7 @@ const TokenTxList = ({
   const [txObjForDetail, setTxObjForDetail] = useState();
 
   const [showNewTxModal, setShowNewTxModal] = useState(false);
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const language = useRecoilValue(languageAtom);
 
   const fetchTxList = async () => {

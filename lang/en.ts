@@ -185,6 +185,7 @@ export const lang: Language = {
     CONFIRM_PIN: 'Confirm PIN',
     WALLET_DETAILS: 'Wallet Details',
     WALLET_CARD_TYPE: 'Card Type',
+    DARK_MODE_MENU: 'Dark Mode',
     // Error boundary key
     ERROR_BOUNDARY_TITLE: 'Oops, Something Went Wrong',
     ERROR_BOUNDARY_DESCRIPTION:

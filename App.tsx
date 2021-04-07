@@ -8,7 +8,7 @@
  * @format
  */
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, { useState } from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {RecoilRoot} from 'recoil';
 import {MenuProvider} from 'react-native-popup-menu';
@@ -18,15 +18,22 @@ import ErrorBoundary from './screens/ErrorBoundary';
 import {ThemeContext} from './ThemeContext';
 import GlobalStatusBar from './GlobalStatusBar';
 
-declare const global: {HermesInternal: null | {}};
-
 const DEFAULT_THEME = themes.dark;
 export {ThemeContext};
 
 const App = () => {
+
+  const [theme, setTheme] = useState<KardiaTheme>(DEFAULT_THEME);
+
   return (
     <RecoilRoot>
-      <ThemeContext.Provider value={DEFAULT_THEME}>
+      <ThemeContext.Provider value={{theme, setTheme: (themeCode: string) => {
+        if (themeCode === 'light') {
+          setTheme(themes.light)
+        } else {
+          setTheme(themes.dark)
+        }
+      }}}>
         <GlobalStatusBar />
         <SafeAreaProvider>
           <ErrorBoundary>

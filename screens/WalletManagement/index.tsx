@@ -20,7 +20,7 @@ export default () => {
   const navigation = useNavigation();
   const language = useRecoilValue(languageAtom);
   const setTabBarVisible = useSetRecoilState(showTabBarAtom);
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
 
   const wallets = useRecoilValue(walletsAtom);
 

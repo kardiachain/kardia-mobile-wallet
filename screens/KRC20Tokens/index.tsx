@@ -22,7 +22,7 @@ import NewTokenModal from '../common/NewTokenModal';
 import Button from '../../components/Button';
 
 export default () => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const navigation = useNavigation();
   const language = useRecoilValue(languageAtom)
 

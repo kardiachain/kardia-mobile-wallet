@@ -20,7 +20,7 @@ const Step2 = ({
 }) => {
   const navigation = useNavigation();
   const language = useRecoilValue(languageAtom);
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const [passcode, setPasscode] = useState('');
   const [error, setError] = useState('');
 

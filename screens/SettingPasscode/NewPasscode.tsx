@@ -13,7 +13,7 @@ import {styles} from './style';
 
 const NewPasscode = () => {
   const {params} = useRoute();
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const [passcode, setPasscode] = useState('');
   const [step, setStep] = useState(1);
   const navigation = useNavigation();

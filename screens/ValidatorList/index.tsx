@@ -17,7 +17,7 @@ import NewStakingModal from '../common/NewStakingModal';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const ValidatorList = () => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const language = useRecoilValue(languageAtom);
   // const [filterValidator, setFilterValidator] = useState('');
   const [validatorList, setValidatorList] = useState<Validator[]>([]);

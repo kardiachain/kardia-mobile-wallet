@@ -45,7 +45,7 @@ export default () => {
   const undelegateAmount = params ? (params as any).undelegateAmount : '';
   const withdrawAmount = params ? (params as any).withdrawAmount : '';
 
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
 
   const setTabBarVisible = useSetRecoilState(showTabBarAtom);
   const language = useRecoilValue(languageAtom);

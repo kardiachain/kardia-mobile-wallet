@@ -23,7 +23,7 @@ import {getSelectedWallet, getWallets} from '../../utils/local';
 
 const TxListSection = () => {
   const navigation = useNavigation();
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const [txList, setTxList] = useState([] as any[]);
 
   const wallets = useRecoilValue(walletsAtom);

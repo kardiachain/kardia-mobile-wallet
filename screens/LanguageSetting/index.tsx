@@ -19,7 +19,7 @@ import { showTabBarAtom } from '../../atoms/showTabBar';
 const languageList = getSupportedLanguage();
 
 const LanguageSetting = () => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const navigation = useNavigation();
 
   const [language, setLanguage] = useRecoilState(languageAtom);

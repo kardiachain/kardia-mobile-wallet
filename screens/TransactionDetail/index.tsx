@@ -29,7 +29,7 @@ import {selectedWalletAtom, walletsAtom} from '../../atoms/wallets';
 import IconButton from '../../components/IconButton';
 
 const TransactionDetail = () => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const {params} = useRoute();
   const txHash = params ? (params as any).txHash : '';
   const navigation = useNavigation();

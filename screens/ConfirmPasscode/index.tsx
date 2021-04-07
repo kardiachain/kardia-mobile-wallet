@@ -20,7 +20,7 @@ const optionalConfigObject = {
 };
 
 const ConfirmPasscode = () => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const language = useRecoilValue(languageAtom);
 
   const [passcode, setPasscode] = useState('');

@@ -27,7 +27,7 @@ import WalletDetail from './screens/WalletDetail';
 const SettingStack = createStackNavigator();
 
 const SettingStackScreen = () => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   // const navigation = useNavigation();
   const language = useRecoilValue(languageAtom);
   return (

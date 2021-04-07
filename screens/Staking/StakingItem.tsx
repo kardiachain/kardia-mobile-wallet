@@ -35,7 +35,7 @@ const StakingItem = ({
   const [claiming, setClaiming] = useState(false);
   const [withDrawing, setWithDrawing] = useState(false);
   const [commissionRate, setCommissionRate] = useState(0);
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
 
   const claimableInKAI = weiToKAI(item.claimableRewards);
   const withDrawbleInKAI = weiToKAI(item.withdrawableAmount);

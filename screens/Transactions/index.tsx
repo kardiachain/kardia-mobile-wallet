@@ -25,7 +25,7 @@ import {showTabBarAtom} from '../../atoms/showTabBar';
 import { HEADER_HEIGHT } from '../../theme';
 
 const TransactionScreen = () => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const navigation = useNavigation();
 
   const [wallets] = useRecoilState(walletsAtom);
@@ -279,7 +279,7 @@ const TransactionScreen = () => {
       {txList.length > 0 && (
         <Button
           type="primary"
-          icon={<AntIcon name="plus" size={24} />}
+          icon={<AntIcon name="plus" size={24} color={theme.name === 'dark' ? '#000000': '#FFFFFF'} />}
           size="small"
           onPress={() => setShowNewTxModal(true)}
           style={styles.floatingButton}

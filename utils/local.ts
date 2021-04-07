@@ -272,3 +272,29 @@ export const saveWalkThroughView = async (on: boolean) => {
     return false;
   }
 };
+
+export const getThemePreference = async () => {
+  try {
+    const value = await AsyncStorage.getItem(`@kardia_theme`);
+    if (value !== null) {
+      return value;
+    }
+    return 'dark';
+  } catch (e) {
+    console.error(e);
+    return '';
+    // error reading value
+  }
+}
+
+export const saveThemePreference = async (theme: string) => {
+  try {
+    await AsyncStorage.setItem(
+      '@kardia_theme',
+      theme,
+    );
+  } catch (e) {
+    console.error(e);
+    return false;
+  }
+}

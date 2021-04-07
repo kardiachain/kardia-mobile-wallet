@@ -46,7 +46,7 @@ const {width: viewportWidth} = Dimensions.get('window');
 
 const AddressDetail = () => {
   const {params} = useRoute();
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const navigation = useNavigation();
   const [txList, setTxList] = useState([] as any[]);
   const addressHash = params ? (params as any).addressHash : '';

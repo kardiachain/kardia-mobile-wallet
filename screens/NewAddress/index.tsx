@@ -22,7 +22,7 @@ import {truncate} from '../../utils/string';
 const NewAddress = () => {
   const {params} = useRoute();
 
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const navigation = useNavigation();
   const [name, setName] = useState('');
   const [errName, setErrName] = useState('');

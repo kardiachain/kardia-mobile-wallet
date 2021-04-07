@@ -20,7 +20,7 @@ import {selectedWalletAtom} from '../../atoms/wallets';
 
 const TokenListSection = () => {
   const navigation = useNavigation();
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const selectedWallet = useRecoilValue(selectedWalletAtom);
 
   const language = useRecoilValue(languageAtom);
@@ -159,7 +159,7 @@ const TokenListSection = () => {
                   <Text
                     allowFontScaling={false}
                     style={{
-                      color: '#FFFFFF',
+                      color: theme.textColor,
                       fontWeight: 'bold',
                       fontSize: 16,
                     }}>

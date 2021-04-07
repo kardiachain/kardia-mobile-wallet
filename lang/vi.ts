@@ -179,6 +179,7 @@ export const lang: Language = {
     CONFIRM_PIN: 'Xác nhận PIN',
     WALLET_DETAILS: 'Thông tin ví',
     WALLET_CARD_TYPE: 'Thẻ',
+    DARK_MODE_MENU: 'Chế độ ban đêm',
     // Error boundary key
     ERROR_BOUNDARY_TITLE: 'Oops, có lỗi xảy ra.',
     ERROR_BOUNDARY_DESCRIPTION:

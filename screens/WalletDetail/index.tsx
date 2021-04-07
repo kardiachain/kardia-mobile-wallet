@@ -29,7 +29,7 @@ const { width: viewportWidth } = Dimensions.get('window')
 
 export default () => {
   const navigation = useNavigation();
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
 
   const scrollRef = useRef<ScrollView>(null);
 

@@ -33,7 +33,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 const {width: viewportWidth} = Dimensions.get('window');
 
 const TokenDetail = () => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const navigation = useNavigation();
   const {params} = useRoute();
   const tokenAvatar = params ? (params as Record<string, any>).avatar : '';

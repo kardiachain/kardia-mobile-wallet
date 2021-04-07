@@ -42,7 +42,7 @@ export default ({
   const [delegating, setDelegating] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
 
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
 
   const wallets = useRecoilValue(walletsAtom);
   const selectedWallet = useRecoilValue(selectedWalletAtom);

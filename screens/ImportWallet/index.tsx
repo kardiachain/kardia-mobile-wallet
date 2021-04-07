@@ -13,7 +13,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default () => {
   const setTabBarVisible = useSetRecoilState(showTabBarAtom);
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const navigation = useNavigation();
   const language = useRecoilValue(languageAtom);
 

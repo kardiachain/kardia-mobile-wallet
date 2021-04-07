@@ -28,7 +28,7 @@ const {width: viewportWidth} = Dimensions.get('window');
 
 const CardSliderSection = ({showQRModal}: {showQRModal: () => void}) => {
   // const navigation = useNavigation();
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const [showNewTxModal, setShowNewTxModal] = useState(false);
   const carouselRef = useRef<Carousel<Wallet>>(null);
   const [wallets, setWallets] = useRecoilState(walletsAtom);
@@ -78,7 +78,7 @@ const CardSliderSection = ({showQRModal}: {showQRModal: () => void}) => {
             <IconButton
               onPress={() => setRemoveIndex(selectedWallet)}
               name="trash"
-              color={theme.textColor}
+              color={'#FFFFFF'}
               size={20}
             />
           </View>

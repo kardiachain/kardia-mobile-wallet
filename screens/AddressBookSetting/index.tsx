@@ -19,7 +19,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 const AddressBookSetting = () => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const navigation = useNavigation();
   const addressBook = useRecoilValue(addressBookAtom);
   const language = useRecoilValue(languageAtom);

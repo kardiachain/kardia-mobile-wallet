@@ -50,7 +50,7 @@ export default ({
   const [keyboardOffset, setKeyboardOffset] = useState(0);
   const [addressBook, setAddressBook] = useRecoilState(addressBookAtom);
 
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const language = useRecoilValue(languageAtom);
 
   useEffect(() => {

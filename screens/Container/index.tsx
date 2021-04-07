@@ -43,7 +43,7 @@ const Stack = createStackNavigator();
 let lastTimestamp = 0;
 
 const Wrap = () => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const language = useRecoilValue(languageAtom);
 
   const showTabBar = useRecoilValue(showTabBarAtom);
@@ -93,8 +93,8 @@ const Wrap = () => {
                 style={{width: 24, height: 24, marginTop: 12, marginBottom: 5}}
                 source={
                   focused
-                    ? require('../../assets/icon/home_dark.png')
-                    : require('../../assets/icon/home_dark_inactive.png')
+                    ? (theme.name === 'dark' ? require('../../assets/icon/home_dark.png') : require('../../assets/icon/home_light.png'))
+                    : (theme.name === 'dark' ? require('../../assets/icon/home_dark_inactive.png') : require('../../assets/icon/home_light_inactive.png'))
                 }
               />
             );
@@ -106,8 +106,8 @@ const Wrap = () => {
                 style={{width: 24, height: 24, marginTop: 12, marginBottom: 5}}
                 source={
                   focused
-                    ? require('../../assets/icon/transaction_dark.png')
-                    : require('../../assets/icon/transaction_dark_inactive.png')
+                    ? (theme.name === 'dark' ? require('../../assets/icon/transaction_dark.png') : require('../../assets/icon/transaction_light.png'))
+                    : (theme.name === 'dark' ? require('../../assets/icon/transaction_dark_inactive.png') : require('../../assets/icon/transaction_light_inactive.png'))
                 }
               />
             );
@@ -119,8 +119,8 @@ const Wrap = () => {
                 style={{width: 24, height: 24, marginTop: 12, marginBottom: 5}}
                 source={
                   focused
-                    ? require('../../assets/icon/setting_dark.png')
-                    : require('../../assets/icon/setting_dark_inactive.png')
+                    ? (theme.name === 'dark' ? require('../../assets/icon/setting_dark.png') : require('../../assets/icon/setting_light.png'))
+                    : (theme.name === 'dark' ? require('../../assets/icon/setting_dark_inactive.png') : require('../../assets/icon/setting_light_inactive.png'))
                 }
               />
             );
@@ -130,8 +130,8 @@ const Wrap = () => {
                 style={{width: 24, height: 24, marginTop: 12, marginBottom: 5}}
                 source={
                   focused
-                    ? require('../../assets/icon/staking_dark.png')
-                    : require('../../assets/icon/staking_dark_inactive.png')
+                    ? (theme.name === 'dark' ? require('../../assets/icon/staking_dark.png') : require('../../assets/icon/staking_light.png'))
+                    : (theme.name === 'dark' ? require('../../assets/icon/staking_dark_inactive.png') : require('../../assets/icon/staking_light_inactive.png'))
                 }
               />
             );
@@ -141,8 +141,8 @@ const Wrap = () => {
                 style={{width: 24, height: 24, marginTop: 12, marginBottom: 5}}
                 source={
                   focused
-                    ? require('../../assets/icon/address_book_dark.png')
-                    : require('../../assets/icon/address_book_dark_inactive.png')
+                    ? (theme.name === 'dark' ? require('../../assets/icon/address_book_dark.png') : require('../../assets/icon/address_book_light.png'))
+                    : (theme.name === 'dark' ? require('../../assets/icon/address_book_dark_inactive.png') : require('../../assets/icon/address_book_light_inactive.png'))
                 }
               />
             );
@@ -155,7 +155,7 @@ const Wrap = () => {
       })}
       tabBarOptions={{
         activeTintColor: theme.primaryColor,
-        inactiveTintColor: '#7A859A',
+        inactiveTintColor: theme.name === 'dark' ? '#7A859A' : '#B0B0B0',
         inactiveBackgroundColor: theme.backgroundColor,
         activeBackgroundColor: theme.backgroundColor,
         keyboardHidesTabBar: true,
@@ -202,7 +202,7 @@ const AppContainer = () => {
   );
   const [inited, setInited] = useState(0);
 
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
 
   useEffect(() => {
     (async () => {

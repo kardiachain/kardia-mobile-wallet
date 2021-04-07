@@ -10,7 +10,7 @@ import {getLanguageString} from '../../utils/lang';
 import {languageAtom} from '../../atoms/language';
 
 const Notification = () => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
 
   const notificationList = useRecoilValue(notificationAtom);
   const language = useRecoilValue(languageAtom);

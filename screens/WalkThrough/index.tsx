@@ -12,7 +12,7 @@ import {styles} from './style';
 const {width: viewportWidth} = Dimensions.get('window')
 
 export default ({onSubmit}: {onSubmit: () => void}) => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const language = useRecoilValue(languageAtom);
 
   const [step, setStep] = useState(0);

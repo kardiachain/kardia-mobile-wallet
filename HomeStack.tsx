@@ -17,7 +17,7 @@ import KRC20Tokens from './screens/KRC20Tokens';
 const HomeStack = createStackNavigator();
 
 const HomeStackScreen = () => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   return (
     <HomeStack.Navigator
       screenOptions={{

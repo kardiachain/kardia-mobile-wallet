@@ -38,7 +38,7 @@ const optionalConfigObject = {
 
 const SettingPasscode = () => {
   const navigation = useNavigation();
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const language = useRecoilValue(languageAtom);
 
   const [passcode, setPasscode] = useState('');

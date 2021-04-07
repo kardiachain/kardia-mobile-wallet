@@ -36,7 +36,7 @@ const SelectWallet = () => {
   const [walletList, setWalletList] = useState<Wallet[]>([]);
   const [loading, setLoading] = useState(false);
   const language = useRecoilValue(languageAtom);
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
 
   const navigation = useNavigation();
   const {params} = useRoute();

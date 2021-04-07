@@ -34,7 +34,7 @@ const CustomModal = ({
 }: CustomModalProps & {
   contentStyle?: any;
 }) => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   let endFlex = DEFAULT_HEIGHT_MODAL;
   let endHeight = DEFAULT_HEIGHT_MODAL_IN_PIXEL;
   if (full) {

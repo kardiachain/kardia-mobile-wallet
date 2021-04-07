@@ -24,7 +24,7 @@ const QRModal = ({
   const selectedWallet = useRecoilValue(selectedWalletAtom);
   const language = useRecoilValue(languageAtom);
 
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
 
   return (
     <Modal

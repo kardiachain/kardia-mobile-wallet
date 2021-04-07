@@ -15,7 +15,7 @@ import { getWalkThroughView, saveWalkThroughView } from '../../utils/local';
 const Welcome = () => {
   const navigation = useNavigation();
   const language = useRecoilValue(languageAtom);
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
 
   const [showWalkThrough, setShowWalkThrough] = useState(true);
 

@@ -34,7 +34,7 @@ const parseValidatorItemForList = (item: Validator) => {
 
 const NewStaking = () => {
   const {params} = useRoute();
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const selectedWallet = useRecoilValue(selectedWalletAtom);
   const wallets = useRecoilValue(walletsAtom);
   const language = useRecoilValue(languageAtom);

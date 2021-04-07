@@ -10,7 +10,7 @@ export default ({ visible, onClose, cardAvatarID }: {
   onClose: () => void;
   cardAvatarID?: number;
 }) => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
 
   const [card, setCard] = useState(cardAvatarID);
 

@@ -36,7 +36,7 @@ export default ({
   onSuccess: () => void;
 }) => {
   const otpRef = useRef<OtpInputsRef>(null);
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const language = useRecoilValue(languageAtom);
   const [passcode, setPasscode] = useState('');
   const [error, setError] = useState('');

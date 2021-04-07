@@ -32,7 +32,7 @@ const NewTokenModal = ({
   visible: boolean;
   onClose: () => void;
 }) => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const language = useRecoilValue(languageAtom);
   const [tokenAddress, setTokenAddress] = useState('');
   const [errorAddress, setErrorAddress] = useState('');

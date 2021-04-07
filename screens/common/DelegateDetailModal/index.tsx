@@ -31,7 +31,7 @@ export default ({
   validatorItem: any;
 }) => {
   const navigation = useNavigation();
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const language = useRecoilValue(languageAtom);
 
   const [claiming, setClaiming] = useState(false);

@@ -14,7 +14,7 @@ import {useNavigation} from '@react-navigation/core';
 const Step1 = ({onSubmit}: {onSubmit: (passcode: string) => void}) => {
   const navigation = useNavigation();
   const language = useRecoilValue(languageAtom);
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const [passcode, setPasscode] = useState('');
   return (
     <>

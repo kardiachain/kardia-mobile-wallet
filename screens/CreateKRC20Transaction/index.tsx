@@ -63,7 +63,7 @@ const CreateKRC20TxScreen = () => {
   const [errorAddress, setErrorAddress] = useState('');
   const [errorAmount, setErrorAmount] = useState('');
 
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const navigation = useNavigation();
   const language = useRecoilValue(languageAtom);
 
@@ -401,7 +401,7 @@ const ListCard = ({
   gasPrice: number;
   selectGasPrice: (gasPrice: number) => void;
 }) => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const language = useRecoilValue(languageAtom);
 
   const data = [

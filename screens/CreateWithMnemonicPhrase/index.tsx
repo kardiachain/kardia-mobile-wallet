@@ -17,7 +17,7 @@ import {useNavigation} from '@react-navigation/core';
 
 const CreateWithMnemonicPhrase = () => {
   const navigation = useNavigation();
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const [mnemonic, setMnemonic] = useState('');
   const [mnemonicError, setMnemonicError] = useState('');
   const [wallets, setWallets] = useRecoilState(walletsAtom);

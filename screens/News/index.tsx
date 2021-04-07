@@ -15,7 +15,7 @@ import {getNews} from '../../services/news';
 import {format, formatDistanceToNowStrict, isSameDay} from 'date-fns';
 
 const NewsScreen = () => {
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const language = useRecoilValue(languageAtom);
   const [news, setNews] = useState<News[]>([]);
 

@@ -29,7 +29,7 @@ const TokenTxDetail = () => {
   const {params}: any = useRoute();
   const txData: KRC20Transaction = params ? JSON.parse(params.txData) : {};
   const tokenInfo: Partial<KRC20> = params ? (params as any).tokenInfo : {};
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const avatar = tokenInfo.avatar || '';
 
   const language = useRecoilValue(languageAtom);

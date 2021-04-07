@@ -13,7 +13,7 @@ import {languageAtom} from '../../atoms/language';
 
 const HomeHeader = () => {
   const navigation = useNavigation();
-  const theme = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const language = useRecoilValue(languageAtom);
   const [showNewTxModal, setShowNewTxModal] = useState(false);
 
