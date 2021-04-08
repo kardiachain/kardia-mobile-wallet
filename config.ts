@@ -20,3 +20,5 @@ export const DEFAULT_KRC20_TOKENS: KRC20[] = [
   //     'https://res.cloudinary.com/gophuot/image/upload/v1613980795/thumbnail_beach_apparel_brand_logo_maker_featuring_a_mermaid_2592a_1024x1024_a94e42cc2a.png',
   // },
 ];
+
+export const SIMPLEX_URL = 'https://buy.chainbits.com/?crypto=KAI';

@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useCallback, useContext, useEffect, useState} from 'react';
-import {ActivityIndicator, Alert, Image, Text, View} from 'react-native';
+import {ActivityIndicator, Alert, Image, Linking, Text, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {styles} from './style';
 import HomeHeader from './Header';
@@ -28,6 +28,7 @@ import {parseKaiBalance} from '../../utils/number';
 import {tokenInfoAtom} from '../../atoms/token';
 import {weiToKAI} from '../../services/transaction/amount';
 import Button from '../../components/Button';
+import { SIMPLEX_URL } from '../../config';
 
 const HomeScreen = () => {
   const [showQRModal, setShowQRModal] = useState(false);
@@ -183,7 +184,8 @@ const HomeScreen = () => {
           </View>
           <Button
             title={getLanguageString(language, 'BUY_KAI')}
-            onPress={() => Alert.alert('Coming soon')}
+            // onPress={() => Alert.alert('Coming soon')}
+            onPress={() => Linking.openURL(SIMPLEX_URL)}
             type="ghost"
             size="small"
             textStyle={{color: '#000000', fontWeight: 'bold'}}
